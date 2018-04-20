@@ -20,7 +20,7 @@ public class TestDB extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-            Connection c = DbUtil.getConn();
+            Connection c = DbUtil.getConnection();
             PreparedStatement statement = c.prepareStatement(READ_BOOK);
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()){
